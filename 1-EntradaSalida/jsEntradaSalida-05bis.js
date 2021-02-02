@@ -9,8 +9,10 @@ function mostrar()
 {	
     var nombre;
     var edad;
+    var apellido;
     
-	nombre = document.getElementById('txtIdNombre').value;
-	edad = document.getElementById('txtIdEdad').value;
-	alert("Usted se llama " + nombre + " y tiene " + edad + " años");
+    nombre = document.getElementById('txtIdNombre').value;
+    edad = document.getElementById('txtIdEdad').value;
+    apellido = prompt("Por favor, ingrese su apellido");
+	alert("Usted se llama " + nombre +" "+ apellido + " Y tiene " + edad + " años");
 }
