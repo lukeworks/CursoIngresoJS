@@ -63,7 +63,7 @@ function dividir()
 	var dividir;
 	dividir = numeroUno / numeroDos;
 
-	// dividir = dividir.ToFixed(2); --> esto permite corregir el valor, en este caso, a la hora de obtener un resultado con decimales, estamos definiendo cuantas decimales tendra (en este caso 2)
+	// dividir = dividir.toFixed(2); --> esto permite corregir el valor, en este caso, a la hora de obtener un resultado con decimales, estamos definiendo cuantas decimales tendra (en este caso 2)
 
 	alert("la división es: " + dividir);
 }
