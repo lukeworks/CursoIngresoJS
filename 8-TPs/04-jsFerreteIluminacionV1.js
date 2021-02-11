@@ -16,40 +16,39 @@ function CalcularPrecio ()
      precioLampara = 35;
 
      var cantidadLamparas;
-     cantidadLamparas = txtIdCantidad.value;
+     cantidadLamparas = document.getElementById("txtIdCantidad").value;
      cantidadLamparas = parseInt(cantidadLamparas);
 
      var marcas;
      marcas = document.getElementById("Marca").value;
 
      var descuento;
-     /*var precioSinDescuento;
-     precioSinDescuento = parseFloat(precioSinDescuento);
-     precioSinDescuento = precioLampara * cantidadLamparas < 5;
-     txtIdprecioDescuento.value = "el precio es $" + precioSinDescuento;
-     */
-    //txtIdprecioDescuento.value = "el precio es $" + precioLampara * (cantidadLamparas < 4);
-     
-     // A. Si compra 6 o más lamparitas bajo consumo tiene un descuento del 50%.
-     if(cantidadLamparas > 5)
+     var precioFinal;
+
+     if(cantidadLamparas < 5)
      {
-         descuento = precioLampara * 50 /100;
+         precioFinal = precioLampara * cantidadLamparas;
      }
-     // B. Si compra 5 lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
      else
      {
-         if(cantidadLamparas = 5) // estaba usando = donde reduzco es que SOLO calcula esa cantidad.
+         if(cantidadLamparas > 5)
          {
-             if(marcas == 'ArgentinaLuz')
+             precioFinal = (precioLampara * 50 / 100) * cantidadLamparas;
+         }
+         else
+         {
+             if(cantidadLamparas > 4)
              {
-                descuento = precioLampara * 40 /100;
+                 precioFinal = (precioLampara * 40 / 100) * cantidadLamparas;
              }
-             if(marcas != 'ArgentinaLuz') // NO REPETIR LA MISMA ASIGNACION DE UNA VARIABLE!
+             else
              {
-                 descuento = precioLampara * 30 /100;
+                 if(Marca != "ArgentinaLuz")
+                 {
+                     precioFinal = (precioLampara * 30 / 100) * cantidadLamparas;
+                 }
              }
          }
-         
      }
-     txtIdprecioDescuento.value = "el precio es $" + (precioLampara - descuento) *cantidadLamparas;
+     txtIdprecioDescuento.value = "el precio es $" + precioFinal;
 }
