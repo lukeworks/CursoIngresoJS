@@ -1,4 +1,8 @@
 /*
+-------------------------------------------------
+Lucas Gonzalez Dall Ora 1H - Ejercicio 10 WHILE
+-------------------------------------------------
+Enunciado:
 Al presionar el botón pedir  números  
 hasta que el usuario quiera, mostrar:
 1-Suma de los negativos.
@@ -15,14 +19,21 @@ function mostrar()
 	//declarar contadores y variables 
 	var respuesta;
 	var numeroIngresado;
-	var sumaNegativos=0;
+	var sumaNegativos;
+	var sumaPositivos;
+	var promedioPositivos;
+	var promedioNegativos;
+
+	sumaNegativos = 0;
+	sumaPositivos = 0;
 
 	respuesta="si";
 
 	while(respuesta=="si")
 	{
-		
-		respuesta=prompt("desea continuar?");
+		numeroIngresado = prompt("Por favor, ingrese un número:");
+		numeroIngresado = parseInt(numeroIngresado);	
+		respuesta = prompt("desea ingresar mas números? si/no:");
 	}//fin del while
 
 	document.write("la suma de negativos es :"+sumaNegativos);
