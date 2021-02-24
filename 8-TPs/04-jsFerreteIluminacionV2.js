@@ -27,69 +27,39 @@ function CalcularPrecio ()
      cantidadLamparas = parseInt(cantidadLamparas);
 
      marcas = document.getElementById("Marca").value;
-    // estoy estableciendo el proceso de datos que no fueron tomados, se toman mas abajo
-     //precioSinDescuento = precioLampara * cantidadLamparas;
-     //txtIdprecioDescuento.value = "el precio es $" + precioSinDescuento;
+
+     precioSinDescuento = precioLampara * cantidadLamparas;
+     
      //precioConDescuento = (precioLampara - (precioLampara * descuento/100)) * cantidadLamparas;
      
-    if(cantidadLamparas > 5)
+     if(cantidadLamparas < 5)
      {
-        descuento = 50;
+        txtIdprecioDescuento.value = "el precio es $" + precioSinDescuento;
      }
      else
      {
-        if(cantidadLamparas == 5)
+        if(cantidadLamparas > 5)
         {
-            if(Marca == "ArgentinaLuz")
-            {
-                descuento = 40;
-            }
-            else
-            {
-                descuento = 30;
-            }
+            descuento = 50;
+            
         }
         else
         {
-            if(cantidadLamparas == 4)
-            {
-                if(Marca == "ArgentinaLuz" || Marca == "FelipeLamparas")
-                {
-                    descuento = 25;
-                }
-                else
-                {
-                    descuento = 20;
-                }
-            }
-        }
-        else
-        {
-            if(cantidadLamparas == 3)
+            if(cantidadLamparas == 5)
             {
                 if(Marca == "ArgentinaLuz")
                 {
-                    descuento = 15;
-                }
-                if(Marca == "FelipeLamparas")
-                {
-                    descuento = 10;
+                    descuento = 40;
                 }
                 else
                 {
-                    descuento = 5;
+                    descuento = 30;
                 }
+                            precioConDescuento = (precioLampara - (precioLampara * descuento/100)) * cantidadLamparas;
+            txtIdprecioDescuento.value = "el precio es $" + precioConDescuento;
             }
-        }
-        else
-        {
-            if(precioConDescuento > 120)
-            {
-                impuesto = precioConDescuento * 10/100;
-                precioConImpuesto = precioConDescuento + impuesto;
-                txtIdprecioDescuento.value = "IIBB Usted pagó $" + precioConImpuesto + ", siendo " + impuesto + " el impuesto que se pagó.";
-            }
+
         }
      }
-     txtIdprecioDescuento.value = "el precio es $" + precioConDescuento;
+     
 }

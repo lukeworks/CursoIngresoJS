@@ -31,3 +31,5 @@ function mostrar()
 	}
 }
 //FIN DE LA FUNCIÓN
+
+//revisar lo que estoy preguntando, estoy siendo redundante..
